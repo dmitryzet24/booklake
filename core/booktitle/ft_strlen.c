@@ -3,7 +3,8 @@
 int ft_strlen(char *str)
 {
     int a = 0;
-    while (!str)
+
+    while (*str != '\0')
     {
         a++;
         str++;
