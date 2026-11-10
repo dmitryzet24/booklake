@@ -1,16 +1,22 @@
 #include "ft_strlen.h"
+#include "normalize_title.c"
 
-int	main (int argc, char **argv)
+int	main (void)
 {
-	(void)argc;
-	if (argc != 2)
-		return (1);
-	else if ((argc == 2) && argv[1][0] == '\0')
-		printf("Please, restart the program and write a book title\n");
-	else
-	{ 
-		printf("Title: %s\n", argv[1]);
-		printf("Length: %d\n", ft_strlen(argv[1]));
-	}
-	return (0);
+	char test1[] = "Dune";
+    char test2[] = "   Dune";
+    char test3[] = "Dune   ";
+    char test4[] = "   The   Hobbit   ";
+    char test5[] = "     ";
+    char test6[] = "";
+    char test7[] = "A  B  C";
+    normalize_title(test1);
+    normalize_title(test2);
+    normalize_title(test3);
+    normalize_title(test4);
+    normalize_title(test5);
+    normalize_title(test6);
+    normalize_title(test7);
+
+    return (0);
 }
